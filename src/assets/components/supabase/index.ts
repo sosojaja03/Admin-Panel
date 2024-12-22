@@ -4,6 +4,7 @@ import { Database } from "./supabase.types";
 export const supabase = createClient<Database>(
   import.meta.env.VITE_SUPABASE_URL,
   import.meta.env.VITE_SUPABASE_ROLE_KEY,
-
-  // import.meta.env.VITE_SUPABASE_ANON_KEY,
+  //hello?
+  //hello?
+  //hello?
 );
