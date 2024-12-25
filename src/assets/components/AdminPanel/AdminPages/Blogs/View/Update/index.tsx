@@ -4,7 +4,7 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import BlogUpdateForm from "../../Components/UpdateBlog/UpdateBlogForm";
 import { getSingleBlogInAdmin, updateBlogInAdmin } from "../../API";
 
-export const BlogUpdateView: React.FC = () => {
+const BlogUpdateView: React.FC = () => {
   const { id } = useParams();
   const queryClient = useQueryClient();
 
@@ -35,3 +35,5 @@ export const BlogUpdateView: React.FC = () => {
     />
   );
 };
+
+export default BlogUpdateView;

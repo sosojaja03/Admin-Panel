@@ -1,5 +1,7 @@
 import UserCreateForm from "../../Components/Create";
 
-export const UserCreateView = () => {
+const UserCreateView = () => {
   return <UserCreateForm />;
 };
+
+export default UserCreateView;

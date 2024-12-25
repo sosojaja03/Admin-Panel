@@ -63,7 +63,7 @@ const fetchBlogs = async (searchText?: string): Promise<Blog[]> => {
   return data as Blog[];
 };
 
-export const BlogView: React.FC = () => {
+const BlogView: React.FC = () => {
   const navigate = useNavigate();
 
   const { control, watch } = useForm<BlogsFilterFormValues>({
@@ -164,6 +164,8 @@ export const BlogView: React.FC = () => {
     </div>
   );
 };
+
+export default BlogView;
 
 // import React, { useEffect } from "react";
 // import { Button, Table } from "antd";

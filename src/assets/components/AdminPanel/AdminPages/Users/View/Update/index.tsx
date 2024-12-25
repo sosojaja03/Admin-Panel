@@ -38,7 +38,7 @@ import UserUpdateForm from "../../Components/Update";
 import { getSignleUserInAdmin, updateUserInAdmin } from "../../API";
 import { UserUpdateFormSkeleton } from "../../Components/Update/skeleton";
 
-export const UserUpdateView = () => {
+const UserUpdateView = () => {
   const { id } = useParams();
   const queryClient = useQueryClient();
 
@@ -75,6 +75,8 @@ export const UserUpdateView = () => {
     />
   );
 };
+
+export default UserUpdateView;
 
 // import { useParams } from "react-router-dom";
 // import UserUpdateForm from "../../Components/Update";

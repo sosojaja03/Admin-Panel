@@ -1,36 +1,9 @@
-// import { useState, useEffect } from "react";
-// import { getUsersListInAdmin } from "../../API";
-// import { UserList } from "../../Components/List";
-// import { mappedUsersListForAdmin } from "../../utils";
-
-// export const UserListView = () => {
-//   const [users, setUsers] = useState<
-//     {
-//       email: string;
-//       createdAt: string;
-//       phone: string;
-//       lastSignIn: string;
-//       id: string | number;
-//     }[]
-//   >([]);
-
-//   useEffect(() => {
-//     getUsersListInAdmin().then((users) => {
-//       const mappedUsers = mappedUsersListForAdmin(users);
-
-//       setUsers(mappedUsers);
-//       console.log("State Users:", mappedUsers); // Debug here
-//     });
-//   }, []);
-//   return <UserList users={users} />;
-// };
-
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { getUsersListInAdmin, updateUserInAdmin } from "../../API";
 import { UserList } from "../../Components/List";
 import { mappedUsersListForAdmin } from "../../utils";
 
-export const UserListView = () => {
+const UserListView = () => {
   const queryClient = useQueryClient();
 
   // Fetch users using `useQuery`
@@ -68,25 +41,4 @@ export const UserListView = () => {
   return <UserList users={users} onUpdate={mutation.mutate} />;
 };
 
-// // views/UserListView.tsx
-// import { UserList } from "../../Components/List";
-// import { useUsersQuery } from "@/assets/components/AdminPanel/AdminPanel";
-
-// export const UserListView = () => {
-//   const { users, isLoading, error } = useUsersQuery();
-
-//   if (error) {
-//     return (
-//       <div className="text-red-500">
-//         Error loading users:{" "}
-//         {error instanceof Error ? error.message : "Unknown error"}
-//       </div>
-//     );
-//   }
-
-//   if (isLoading) {
-//     return <div>Loading...</div>; // Consider adding a proper loading skeleton
-//   }
-
-//   return <UserList users={users} />;
-// };
+export default UserListView;
