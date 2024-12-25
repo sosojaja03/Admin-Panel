@@ -10,3 +10,10 @@ export const mappedUsersListForAdmin = (users: User[]) => {
     key: user?.id,
   }));
 };
+
+export const mappedUsersListForDropdown = (users: User[]) => {
+  return users?.map((user) => ({
+    label: user?.email,
+    value: user?.id,
+  }));
+};
